@@ -1,15 +1,14 @@
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import vue from '@vitejs/plugin-vue';
 import { defineConfig } from 'vite';
-import checker from 'vite-plugin-checker';
 import { createHtmlPlugin } from 'vite-plugin-html';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    base: '',
     build: {
-        emptyOutDir: true,
-        outDir: '../../extension/pages/popup',
         manifest: true,
+        assetsDir: '',
     },
     optimizeDeps: {
         include: [
@@ -20,10 +19,6 @@ export default defineConfig({
     plugins: [
         nxViteTsPaths(),
         vue({ script: { defineModel: true, propsDestructure: true } }),
-        checker({
-            enableBuild: false,
-            vueTsc: { tsconfigPath: './tsconfig.app.json' },
-        }),
         createHtmlPlugin({
             minify: true,
             /**
@@ -33,5 +28,5 @@ export default defineConfig({
             entry: '/src/main.ts',
         }),
     ],
-    cacheDir: '../../node_modules/.vite',
+    cacheDir: '../../../node_modules/.vite',
 });

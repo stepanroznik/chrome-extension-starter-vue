@@ -1,8 +1,8 @@
 {
-  "name": "options",
+  "name": "extension-options",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "options",
+  "prefix": "extension-options",
   "sourceRoot": "apps/extension/options/src",
   "targets": {
     "build": {

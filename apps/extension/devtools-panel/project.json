@@ -1,8 +1,8 @@
 {
-  "name": "devtools-panel",
+  "name": "extension-devtools-panel",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "devtools-panel",
+  "prefix": "extension-devtools-panel",
   "sourceRoot": "apps/extension/devtools-panel/src",
   "targets": {
     "build": {

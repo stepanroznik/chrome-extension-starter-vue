@@ -1,8 +1,8 @@
 {
-    "name": "frontend",
+    "name": "extension-popup",
     "$schema": "../../node_modules/nx/schemas/project-schema.json",
     "projectType": "application",
-    "sourceRoot": "apps/frontend/src",
+    "sourceRoot": "apps/extension/popup/src",
     "tags": [],
     "targets": {
         "build": {
@@ -10,7 +10,7 @@
             "outputs": ["{options.outputPath}"],
             "defaultConfiguration": "production",
             "options": {
-                "outputPath": "dist/apps/frontend"
+                "outputPath": "extension/pages/popup"
             },
             "configurations": {
                 "development": {
@@ -25,15 +25,15 @@
             "executor": "@nx/vite:dev-server",
             "defaultConfiguration": "development",
             "options": {
-                "buildTarget": "frontend:build"
+                "buildTarget": "extension-popup:build"
             },
             "configurations": {
                 "development": {
-                    "buildTarget": "frontend:build:development",
+                    "buildTarget": "extension-popup:build:development",
                     "hmr": true
                 },
                 "production": {
-                    "buildTarget": "frontend:build:production",
+                    "buildTarget": "extension-popup:build:production",
                     "hmr": false
                 }
             }
@@ -41,7 +41,7 @@
         "build-for-test": {
             "executor": "nx:run-commands",
             "options": {
-                "cwd": "apps/frontend",
+                "cwd": "apps/extension/popup",
                 "command": "vite build --mode=test"
             },
             "configurations": {
@@ -55,24 +55,24 @@
             "options": {
                 "parallel": false,
                 "commands": [
-                    "npm run nx run frontend:build-for-test:dev",
-                    "npx serve -s -p 8080 dist/apps/frontend"
+                    "npm run nx run extension-popup:build-for-test:dev",
+                    "npx serve -s -p 8080 dist/apps/extension/popup"
                 ]
             }
         },
         "test": {
             "executor": "@nx/vite:test",
-            "outputs": ["{workspaceRoot}/coverage/apps/frontend"],
+            "outputs": ["{workspaceRoot}/coverage/apps/extension/popup"],
             "options": {
                 "passWithNoTests": true,
-                "reportsDirectory": "../../coverage/apps/frontend"
+                "reportsDirectory": "../../coverage/apps/extension/popup"
             }
         },
         "lint": {
             "executor": "@nx/linter:eslint",
             "outputs": ["{options.outputFile}"],
             "options": {
-                "lintFilePatterns": ["apps/frontend/**/*.ts"]
+                "lintFilePatterns": ["apps/extension/popup/**/*.ts"]
             }
         },
         "dockerize": {
@@ -80,8 +80,8 @@
             "options": {
                 "parallel": false,
                 "commands": [
-                    "npm run nx build frontend",
-                    "tools/docker-utils/docker-build-app.sh frontend"
+                    "npm run nx build extension-popup",
+                    "tools/docker-utils/docker-build-app.sh extension-popup"
                 ]
             }
         }

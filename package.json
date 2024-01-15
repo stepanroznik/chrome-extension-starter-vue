@@ -5,10 +5,10 @@
     "cz": "git-cz",
     "prepare": "husky install",
     "affected:lint": "nx affected:lint",
-    "start:dev": "nx run-many --target=build --all --configuration development --watch --parallel 5",
-    "start:prod": "nx run-many --target=build --all --configuration production --watch --parallel 5",
-    "build:dev": "nx run-many --target=build --all --configuration development --parallel 5",
-    "build:prod": "nx run-many --target=build --all --configuration production --parallel 5"
+    "start:dev": "nx run-many --target=build --projects=extension-* --configuration development --watch --parallel 5",
+    "start:prod": "nx run-many --target=build --projects=extension-* --configuration production --watch --parallel 5",
+    "build:dev": "nx run-many --target=build --projects=extension-* --configuration development --parallel 5",
+    "build:prod": "nx run-many --target=build --projects=extension-* --configuration production --parallel 5"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "~16.2.0",
     "@angular/router": "~16.2.0",
     "@vitejs/plugin-vue": "^4.2.0",
+    "@vue/eslint-config-typescript": "^12.0.0",
     "postcss": "^8.4.31",
     "rxjs": "~7.8.0",
     "tailwindcss": "^3.3.1",
@@ -70,6 +71,7 @@
     "eslint": "~8.46.0",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-unused-imports": "^2.0.0",
+    "eslint-plugin-vue": "^9.20.1",
     "git-cz": "^4.9.0",
     "husky": "^8.0.3",
     "jest": "^29.4.1",
