@@ -1,0 +1,16 @@
+{
+    "typescript.preferences.quoteStyle": "single",
+    "typescript.preferences.importModuleSpecifier": "project-relative",
+    "css.lint.unknownAtRules": "ignore",
+    "editor.formatOnSave": false,
+    "[feature]": {
+        "editor.formatOnSave": true
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+    },
+    "files.exclude": {
+        "**/.git": false
+    },
+    "eslint.validate": ["json"]
+}
