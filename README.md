@@ -22,6 +22,8 @@ Chrome Extension starter using Nx workspace and Vue.
 
 ✅ Typescript
 
+✅ Tailwind CSS
+
 ✅ Chrome Types
 
 ✅ Live Reload
