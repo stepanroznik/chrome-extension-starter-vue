@@ -3,7 +3,7 @@ export default {
   displayName: 'popup',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../../coverage/apps/extension/popup',
+  coverageDirectory: '../../../coverage/apps/extension/popup-angular',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
