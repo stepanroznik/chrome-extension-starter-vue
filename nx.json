@@ -65,6 +65,9 @@
       "linter": "eslint",
       "unitTestRunner": "none",
       "e2eTestRunner": "none"
+    },
+    "@nx/angular:move": {
+      "projectNameAndRootFormat": "as-provided"
     }
   },
   "defaultProject": "popup"
