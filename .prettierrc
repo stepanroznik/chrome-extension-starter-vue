@@ -2,7 +2,6 @@
   "singleQuote": true,
   "importOrder": [
     "^zone.js(.*)$",
-    "^@angular/(.*)$",
     "^rxjs(.*)$",
     "<THIRD_PARTY_MODULES>",
     "^@chrome-extension-starter/(.*)$",
