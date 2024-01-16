@@ -8,6 +8,7 @@
     "serve": {
       "executor": "nx:run-commands",
       "options": {
+        "parallel": false,
         "commands": [
           "nx run-many --target=build --projects=extension-* --configuration development --watch --parallel 5"
         ]
@@ -15,7 +16,6 @@
       "configurations": {
         "production": {
           "commands": [
-            "npm run bump-minor && npm run sync-manifest-version",
             "nx run-many --target=build --projects=extension-* --configuration production --watch --parallel 5"
           ]
         },
@@ -25,6 +25,7 @@
     "build": {
       "executor": "nx:run-commands",
       "options": {
+        "parallel": false,
         "commands": [
           "nx run-many --target=build --projects=extension-* --configuration development --parallel 5"
         ]
