@@ -1,4 +1,4 @@
-# Chrome Extension Starter
+# Chrome Extension Starter Vue
 
 ![Chrome Extension Starter Logo](.github/images/logo.png)
 
