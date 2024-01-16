@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col p-4 gap-4 w-96">
         <h1 class="text-xl">
-            chrome-extension-starter - popup
+            chrome-extension-starter - devtools-panel
         </h1>
         <button
             class="border border-gray-600 bg-white hover:bg-gray-600 hover:text-white p-2"
