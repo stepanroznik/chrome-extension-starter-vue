@@ -25,18 +25,6 @@
         "src/**/*.ts",
         "src/**/*.d.ts",
         "src/**/*.tsx",
-        "src/**/*.vue",
-        "../../libs/shared-frontend-libs/**/*.vue",
-        "../../libs/shared-frontend-libs/**/*.ts",
-        "../../libs/shared-frontend-libs/**/*.d.ts",
-        "../../libs/shared-frontend-libs/**/*.tsx",
-        "../../libs/frontend-libs/**/*.vue",
-        "../../libs/frontend-libs/**/*.ts",
-        "../../libs/frontend-libs/**/*.d.ts",
-        "../../libs/frontend-libs/**/*.tsx",
-        "../../libs/superlicensor-client/**/*.ts",
-        "../../package.json",
-        "../../libs/shared/**/*.d.ts",
-        "../../libs/shared/**/*.ts",
+        "src/**/*.vue"
     ]
 }
