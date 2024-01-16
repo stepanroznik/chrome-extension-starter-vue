@@ -37,53 +37,6 @@
           "hmr": false
         }
       }
-    },
-    "build-for-test": {
-      "executor": "nx:run-commands",
-      "options": {
-        "cwd": "apps/extension/options",
-        "command": "vite build --mode=test"
-      },
-      "configurations": {
-        "dev": {
-          "command": "vite build --mode=development"
-        }
-      }
-    },
-    "build-and-serve": {
-      "executor": "nx:run-commands",
-      "options": {
-        "parallel": false,
-        "commands": [
-          "npm run nx run extension-options:build-for-test:dev",
-          "npx serve -s -p 8080 dist/apps/extension/options"
-        ]
-      }
-    },
-    "test": {
-      "executor": "@nx/vite:test",
-      "outputs": ["{workspaceRoot}/coverage/apps/extension/options"],
-      "options": {
-        "passWithNoTests": true,
-        "reportsDirectory": "../../coverage/apps/extension/options"
-      }
-    },
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["apps/extension/options/**/*.ts"]
-      }
-    },
-    "dockerize": {
-      "executor": "nx:run-commands",
-      "options": {
-        "parallel": false,
-        "commands": [
-          "npm run nx build extension-options",
-          "tools/docker-utils/docker-build-app.sh extension-options"
-        ]
-      }
     }
   }
 }

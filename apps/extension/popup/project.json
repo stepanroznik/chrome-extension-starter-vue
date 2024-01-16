@@ -37,53 +37,6 @@
                     "hmr": false
                 }
             }
-        },
-        "build-for-test": {
-            "executor": "nx:run-commands",
-            "options": {
-                "cwd": "apps/extension/popup",
-                "command": "vite build --mode=test"
-            },
-            "configurations": {
-                "dev": {
-                    "command": "vite build --mode=development"
-                }
-            }
-        },
-        "build-and-serve": {
-            "executor": "nx:run-commands",
-            "options": {
-                "parallel": false,
-                "commands": [
-                    "npm run nx run extension-popup:build-for-test:dev",
-                    "npx serve -s -p 8080 dist/apps/extension/popup"
-                ]
-            }
-        },
-        "test": {
-            "executor": "@nx/vite:test",
-            "outputs": ["{workspaceRoot}/coverage/apps/extension/popup"],
-            "options": {
-                "passWithNoTests": true,
-                "reportsDirectory": "../../coverage/apps/extension/popup"
-            }
-        },
-        "lint": {
-            "executor": "@nx/linter:eslint",
-            "outputs": ["{options.outputFile}"],
-            "options": {
-                "lintFilePatterns": ["apps/extension/popup/**/*.ts"]
-            }
-        },
-        "dockerize": {
-            "executor": "nx:run-commands",
-            "options": {
-                "parallel": false,
-                "commands": [
-                    "npm run nx build extension-popup",
-                    "tools/docker-utils/docker-build-app.sh extension-popup"
-                ]
-            }
         }
     }
 }

@@ -1,7 +1,6 @@
 {
   "singleQuote": true,
   "importOrder": [
-    "^zone.js(.*)$",
     "^rxjs(.*)$",
     "<THIRD_PARTY_MODULES>",
     "^@chrome-extension-starter/(.*)$",
@@ -15,29 +14,5 @@
     "jsx",
     "classProperties",
     "decorators-legacy"
-  ],
-  "attributeGroups": [
-    "$ANGULAR_STRUCTURAL_DIRECTIVE",
-    "$ANGULAR_ANIMATION",
-    "$ANGULAR_ELEMENT_REF",
-    "$CLASS",
-    "$ID",
-    "$NAME",
-    "$DATA",
-    "$SRC",
-    "$FOR",
-    "$TYPE",
-    "$HREF",
-    "$VALUE",
-    "$TITLE",
-    "$ALT",
-    "$ROLE",
-    "$ARIA",
-    "$DEFAULT",
-    "$ANGULAR_ANIMATION_INPUT",
-    "$ANGULAR_INPUT",
-    "$ANGULAR_OUTPUT",
-    "$ANGULAR_TWO_WAY_BINDING"
-  ],
-  "attributeSort": "ASC"
+  ]
 }
