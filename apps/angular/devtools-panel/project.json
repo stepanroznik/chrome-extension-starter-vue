@@ -1,25 +1,25 @@
 {
-  "name": "extension-devtools-panel",
+  "name": "angular-devtools-panel",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "extension-devtools-panel",
-  "sourceRoot": "apps/extension/devtools-panel/src",
+  "prefix": "angular-angular-devtools-panel",
+  "sourceRoot": "apps/angular/devtools-panel/src",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "extension/pages/devtools-panel",
-        "index": "apps/extension/devtools-panel/src/index.html",
-        "main": "apps/extension/devtools-panel/src/main.ts",
+        "outputPath": "angular/pages/devtools-panel",
+        "index": "apps/angular/devtools-panel/src/index.html",
+        "main": "apps/angular/devtools-panel/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/extension/devtools-panel/tsconfig.app.json",
+        "tsConfig": "apps/angular/devtools-panel/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
-          "apps/extension/devtools-panel/src/favicon.ico",
-          "apps/extension/devtools-panel/src/assets"
+          "apps/angular/devtools-panel/src/favicon.ico",
+          "apps/angular/devtools-panel/src/assets"
         ],
-        "styles": ["apps/extension/devtools-panel/src/styles.scss"],
+        "styles": ["apps/angular/devtools-panel/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -72,8 +72,8 @@
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
-          "apps/extension/devtools-panel/**/*.ts",
-          "apps/extension/devtools-panel/**/*.html"
+          "apps/angular/devtools-panel/**/*.ts",
+          "apps/angular/devtools-panel/**/*.html"
         ]
       }
     },
@@ -81,7 +81,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/extension/devtools-panel/jest.config.ts",
+        "jestConfig": "apps/angular/devtools-panel/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {

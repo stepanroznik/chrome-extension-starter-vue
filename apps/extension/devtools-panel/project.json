@@ -1,0 +1,89 @@
+{
+  "name": "extension-devtools-panel",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/extension/devtools-panel/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "extension/pages/devtools-panel"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "extension-devtools-panel:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "extension-devtools-panel:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "extension-devtools-panel:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "build-for-test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/extension/devtools-panel",
+        "command": "vite build --mode=test"
+      },
+      "configurations": {
+        "dev": {
+          "command": "vite build --mode=development"
+        }
+      }
+    },
+    "build-and-serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "parallel": false,
+        "commands": [
+          "npm run nx run extension-devtools-panel:build-for-test:dev",
+          "npx serve -s -p 8080 dist/apps/extension/devtools-panel"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{workspaceRoot}/coverage/apps/extension/devtools-panel"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/apps/extension/devtools-panel"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/extension/devtools-panel/**/*.ts"]
+      }
+    },
+    "dockerize": {
+      "executor": "nx:run-commands",
+      "options": {
+        "parallel": false,
+        "commands": [
+          "npm run nx build extension-devtools-panel",
+          "tools/docker-utils/docker-build-app.sh extension-devtools-panel"
+        ]
+      }
+    }
+  }
+}
