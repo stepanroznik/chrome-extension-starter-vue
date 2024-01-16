@@ -61,7 +61,7 @@ npm i
 2. Run development live reload
 
 ```shell
-npm run start:dev
+npm run serve:dev
 ```
 
 3. Open Chrome browser
@@ -95,13 +95,13 @@ All the applications have already the Chrome types so can just use `chrome` and 
 Start with development configuration
 
 ```shell
-npm run start:dev
+npm run serve:dev
 ```
 
 Start with production configuration.
 
 ```shell
-npm run start:prod
+npm run serve:prod
 ```
 
 Build with development configuration.
@@ -120,9 +120,9 @@ npm run build:prod
 
 I recommend making the release automatic with GitHub actions or other ci service.
 
-- Bump the version number in `manifest.json`
-- Create a git tag containing the version you are releasing using `git tag -a <version>`
 - Run `npm run build:prod`
+- ~~Bump the version number in `manifest.json` & `package.json`~~ (this is done automatically with npm run build:prod)
+- Create a git tag containing the version you are releasing using `git tag -a <version>`
 - Create zip file from the extension directory
 - Upload the zip to the Chrome developer dashboard
 

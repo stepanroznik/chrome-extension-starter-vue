@@ -70,5 +70,5 @@
       "e2eTestRunner": "none"
     }
   },
-  "defaultProject": "popup"
+  "defaultProject": "extension"
 }

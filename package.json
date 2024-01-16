@@ -5,10 +5,12 @@
     "cz": "git-cz",
     "prepare": "husky install",
     "affected:lint": "nx affected:lint",
-    "start:dev": "nx run-many --target=build --projects=extension-* --configuration development --watch --parallel 5",
-    "start:prod": "nx run-many --target=build --projects=extension-* --configuration production --watch --parallel 5",
-    "build:dev": "nx run-many --target=build --projects=extension-* --configuration development --parallel 5",
-    "build:prod": "nx run-many --target=build --projects=extension-* --configuration production --parallel 5"
+    "build:prod": "nx build extension --configuration production",
+    "build:dev": "nx build extension --configuration development",
+    "serve:prod": "nx serve extension --configuration production",
+    "serve:dev": "nx serve extension --configuration development",
+    "bump-minor": "npm version --commit-hooks false --git-tag-version false minor",
+    "sync-manifest-version": "sed -i 's/\\\"version\\\": \\\"[^\\\"]*\\\"/\\\"version\\\": \\\"'$(grep '\\\"version\\\":' package.json | sed 's/.*\\\"version\\\": \\\"\\(.*\\)\\\".*/\\1/')'\\\"/' extension/manifest.json"
   },
   "private": true,
   "dependencies": {

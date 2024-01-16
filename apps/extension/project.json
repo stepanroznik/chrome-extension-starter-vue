@@ -1,50 +1,43 @@
 {
   "name": "extension",
-  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "sourceRoot": "apps/extension/scripts/background/src",
+  "sourceRoot": "apps/extension",
   "tags": ["type:script"],
   "targets": {
-    "build": {
-      "executor": "@nx/webpack:webpack",
-      "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": "production",
-      "options": {
-        "outputPath": "extension/scripts/background",
-        "compiler": "babel",
-        "index": "",
-        "main": "apps/extension/scripts/background/src/main.ts",
-        "tsConfig": "apps/extension/scripts/background/tsconfig.app.json",
-        "generateIndexHtml": false,
-        "webpackConfig": "apps/extension/scripts/background/webpack.config.js"
-      },
-      "configurations": {
-        "production": {
-          "optimization": true,
-          "outputHashing": "none",
-          "sourceMap": false,
-          "namedChunks": false,
-          "extractLicenses": false,
-          "vendorChunk": false
-        }
-      }
-    },
     "serve": {
-      "executor": "@nx/webpack:dev-server",
+      "executor": "nx:run-commands",
       "options": {
-        "buildTarget": "scripts-background:build"
+        "commands": [
+          "nx run-many --target=build --projects=extension-* --configuration development --watch --parallel 5"
+        ]
       },
       "configurations": {
         "production": {
-          "buildTarget": "scripts-background:build:production"
-        }
+          "commands": [
+            "npm run bump-minor && npm run sync-manifest-version",
+            "nx run-many --target=build --projects=extension-* --configuration production --watch --parallel 5"
+          ]
+        },
+        "development": {}
       }
     },
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+    "build": {
+      "executor": "nx:run-commands",
       "options": {
-        "lintFilePatterns": ["apps/extension/scripts/background/**/*.ts"]
+        "commands": [
+          "nx run-many --target=build --projects=extension-* --configuration development --parallel 5"
+        ]
+      },
+      "configurations": {
+        "production": {
+          "commands": [
+            "npm run bump-minor",
+            "npm run sync-manifest-version",
+            "nx run-many --target=build --projects=extension-* --configuration production --parallel 5"
+          ]
+        },
+        "development": {}
       }
     }
   }
