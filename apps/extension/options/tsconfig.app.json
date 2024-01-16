@@ -1,0 +1,46 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc",
+    "composite": true,
+    "noEmit": false,
+    "declaration": true,
+    "strict": true,
+    "noImplicitReturns": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": false,
+    "target": "esnext",
+    "useDefineForClassFields": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "lib": ["esnext", "dom"]
+  },
+  "exclude": [
+    "../../**/*.spec.ts",
+    "../../**/jest.config.ts",
+    "../../**/*.test.ts"
+  ],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "../../libs/shared-frontend-libs/**/*.vue",
+    "../../libs/shared-frontend-libs/**/*.ts",
+    "../../libs/shared-frontend-libs/**/*.d.ts",
+    "../../libs/shared-frontend-libs/**/*.tsx",
+    "../../libs/frontend-libs/**/*.vue",
+    "../../libs/frontend-libs/**/*.ts",
+    "../../libs/frontend-libs/**/*.d.ts",
+    "../../libs/frontend-libs/**/*.tsx",
+    "../../libs/superlicensor-client/**/*.ts",
+    "../../package.json",
+    "../../libs/shared/**/*.d.ts",
+    "../../libs/shared/**/*.ts"
+  ]
+}
