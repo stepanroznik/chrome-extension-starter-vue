@@ -1,5 +1,5 @@
 {
-  "name": "angular-extension-options",
+  "name": "extension-options",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "sourceRoot": "apps/extension/options/src",
@@ -25,15 +25,15 @@
       "executor": "@nx/vite:dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "angular-extension-options:build"
+        "buildTarget": "extension-options:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "angular-extension-options:build:development",
+          "buildTarget": "extension-options:build:development",
           "hmr": true
         },
         "production": {
-          "buildTarget": "angular-extension-options:build:production",
+          "buildTarget": "extension-options:build:production",
           "hmr": false
         }
       }
@@ -55,7 +55,7 @@
       "options": {
         "parallel": false,
         "commands": [
-          "npm run nx run angular-extension-options:build-for-test:dev",
+          "npm run nx run extension-options:build-for-test:dev",
           "npx serve -s -p 8080 dist/apps/extension/options"
         ]
       }
@@ -80,8 +80,8 @@
       "options": {
         "parallel": false,
         "commands": [
-          "npm run nx build angular-extension-options",
-          "tools/docker-utils/docker-build-app.sh angular-extension-options"
+          "npm run nx build extension-options",
+          "tools/docker-utils/docker-build-app.sh extension-options"
         ]
       }
     }
