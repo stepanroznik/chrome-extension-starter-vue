@@ -90,6 +90,8 @@ We are also can inject content script which can be found in `apps/extension/scri
 
 All the applications have already the Chrome types so can just use `chrome` and the editor will recognize it.
 
+To integrate this app into an existing Nx repository, simply copy the extension folder from ./apps into the apps directory of your repository. Remember to update your .gitignore to include the extension's build files and verify that your dependencies are compatible.
+
 ## 🕹 Commands
 
 Start with development configuration
