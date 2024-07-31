@@ -4,7 +4,7 @@
     "defaultBase": "main"
   },
   "cli": {
-    "defaultCollection": "@nx/vite"
+    "defaultCollection": "@nx/js"
   },
   "tasksRunnerOptions": {
     "default": {
